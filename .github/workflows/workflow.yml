@@ -24,7 +24,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Build
-        run: echo Building Project
+        run: docker build  -t movit-angularjs
 
   test:
     runs-on: ubuntu-latest
