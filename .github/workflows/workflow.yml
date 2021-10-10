@@ -30,9 +30,20 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14'
+          registry-url: https://registry.npmjs.org
+      - name: Install dependencies
+        run: |
+          npm install -g karma
+          npm install -g jasmine
+          npm install
       - name: Testes unitários
-        run: echo Teste Unitário
+        run: npm run test
   deploy-vercel:
     runs-on: ubuntu-latest
     needs: unit-testing
