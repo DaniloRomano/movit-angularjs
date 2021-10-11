@@ -20,19 +20,21 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-      - name: Setup
-        uses: actions/setup-node@v1
-        with:
-          node-version: "14"
-          registry-url: https://registry.npmjs.org
-      - name: Install grunt
-        run: npm install grunt -g
-      - name: install
-        run: npm install
+     # - uses: actions/checkout@v2
+     # - name: Setup
+     #   uses: actions/setup-node@v1
+     #   with:
+     #     node-version: "14"
+     #     registry-url: https://registry.npmjs.org
+     # - name: Install grunt
+     #   run: npm install grunt -g
+     # - name: install
+      #  run: npm install
       # Runs a single command using the runners shell
+     # - name: Build
+       # run: grunt
       - name: Build
-        run: grunt
+        run: echo Build Command
 
   unit-testing:
     runs-on: ubuntu-latest
