@@ -5,7 +5,7 @@ name: Deploy
 # Controls when the workflow will run
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -24,12 +24,12 @@ jobs:
       - name: Setup
         uses: actions/setup-node@v1
         with:
-          node-version: '14'
+          node-version: "14"
           registry-url: https://registry.npmjs.org
       - name: Install grunt
-        run: |
-          npm install grunt -g
-          npm install
+        run: npm install grunt -g
+      - name: install
+        run: npm install
       # Runs a single command using the runners shell
       - name: Build
         run: grunt
@@ -43,7 +43,7 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v1
         with:
-          node-version: '14'
+          node-version: "14"
           registry-url: https://registry.npmjs.org
       - name: Install dependencies
         run: |
