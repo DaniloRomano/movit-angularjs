@@ -51,7 +51,9 @@ jobs:
         run: |
           npm install -g karma
           npm install -g jasmine
+          npm install -g bower
           npm install
+          bower install
       - name: Testes unitários
         run: npm run test
   deploy-vercel:
