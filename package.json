@@ -4,6 +4,7 @@
   "description": "Movit in angularJS",
   "main": "index.js",
   "scripts": {
+    "serve": "browser-sync start --cwd dist --server --files dist",
     "test": "karma start config/karma/karma.conf.js"
   },
   "repository": {
@@ -16,10 +17,16 @@
     "url": "https://github.com/DaniloRomano/movit-angularjs/issues"
   },
   "homepage": "https://github.com/DaniloRomano/movit-angularjs#readme",
-  "dependencies": {
-    "requirejs": "^2.3.6"
-  },
+  "dependencies": {},
   "devDependencies": {
+    "grunt": "^1.4.1",
+    "grunt-contrib-clean": "^2.0.0",
+    "grunt-contrib-concat": "^2.0.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "^4.0.0",
+    "grunt-contrib-uglify": "^5.0.1",
+    "grunt-ng-annotate": "^4.0.0",
+    "grunt-usemin": "^3.1.1",
     "karma": "^6.3.4",
     "karma-chrome-launcher": "^3.1.0",
     "karma-jasmine": "^4.0.1",

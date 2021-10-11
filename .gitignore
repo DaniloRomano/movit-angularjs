@@ -107,3 +107,12 @@ dist
 .tern-port
 
 .vercel
+
+# Browser-Sync
+bs-config.js
+
+# dist folder
+dist/
+
+# vendor
+public/vendor/
