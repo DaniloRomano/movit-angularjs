@@ -20,19 +20,19 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-     # - uses: actions/checkout@v2
-     # - name: Setup
-     #   uses: actions/setup-node@v1
-     #   with:
-     #     node-version: "14"
-     #     registry-url: https://registry.npmjs.org
-     # - name: Install grunt
-     #   run: npm install grunt -g
-     # - name: install
+      # - uses: actions/checkout@v2
+      # - name: Setup
+      #   uses: actions/setup-node@v1
+      #   with:
+      #     node-version: "14"
+      #     registry-url: https://registry.npmjs.org
+      # - name: Install grunt
+      #   run: npm install grunt -g
+      # - name: install
       #  run: npm install
       # Runs a single command using the runners shell
-     # - name: Build
-       # run: grunt
+      # - name: Build
+      # run: grunt
       - name: Build
         run: echo Build Command
 
@@ -53,7 +53,6 @@ jobs:
           npm install -g jasmine
           npm install -g bower
           npm install
-          bower install
       - name: Testes unitários
         run: npm run test
   deploy-vercel:
@@ -61,6 +60,10 @@ jobs:
     needs: unit-testing
     steps:
       - uses: actions/checkout@v2
+      - name: Installing dependencies
+        run: |
+          npm install -g bower
+          bower install
       - name: "Deploy to Vercel"
         run: |
           prodRun=""
