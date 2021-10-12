@@ -1,14 +1,96 @@
-body{
-    margin:0;
-    padding: 0;
+:root {
+    --white: #fff;
+    --background: #F2F3F5;
+    --gray-line: #dcdde0;
+    --text: #666666;
+    --text-highlight: #b3b9ff;
+    --title: #2e384d;
+    --red: #e83f5b;
+    --green: #4cd62b;
+    --blue: #5965e0;
+    --blue-dark: #4953b8;
+    --blue-twitter: #2aa9e0;
 }
 
-.main{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #0805d8;
+html {
+  font-size: 62%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--background);
+  font-family: 'Roboto';
+}
+
+body, input, textarea, button {
+    font: 400 1rem "Inter", sans-serif;
+}
+
+.homeContainer{
     height: 100vh;
-    font:50px Arial;
+    width: 100rem;
+    margin: auto;
+    padding: 2.5rem 2.5rem;
+    flex-direction: column;
+}
+
+.experienceBar {
+    display: flex;
+    align-items: center;
+}
+
+.experienceBar span {
+    font-size: 1rem;
+}
+
+.experienceBar>div {
+    flex: 1;
+    height: 4px;
+    border-radius: 4px;
+    background: var(--gray-line);
+    margin: 0 1.5rem;
+    position: relative;
+}
+
+.experienceBar>div>div {
+    height: 4px;
+    border-radius: 4px;
+    background: var(--green);
+}
+
+span.currentExperience {
+    position: absolute;
+    top: 12px;
+    transform: translatex(-50%);
+}
+
+.profileContainer {
+  display: flex;
+  align-items: center;
+}
+
+.profileContainer > img {
+  width: 5.5rem;
+  height: 5.5rem;
+  border-radius: 50%;
+}
+
+.profileContainer div {
+  margin-left: 1.5rem;
+}
+
+.profileContainer div strong {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--title);
+}
+
+.profileContainer div p {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.profileContainer div p img {
+  margin-right: 0.5rem;
 }
