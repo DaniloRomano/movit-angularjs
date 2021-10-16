@@ -1,10 +1,19 @@
-angular
-  .module("movit")
-  .controller("experienceBarController", ["$scope", function ($scope) {}])
-  .directive("experienceBar", function () {
-    return {
-      restrict: "E",
-      templateUrl: "js/home/components/templates/experience-bar-template.html",
-      controller: "experienceBarController",
-    };
-  });
+// angular
+//   .module("movit")
+//   .controller("experienceBarController", ["$scope", function ($scope) {}])
+//   .directive("experienceBar", function () {
+//     return {
+//       restrict: "E",
+//       templateUrl: "js/home/components/templates/experience-bar-template.html",
+//       controller: "experienceBarController",
+//     };
+//   });
+define([
+  "text!home/components/templates/experience-bar-template.html",
+], function (template) {
+  return {
+    restrict: "E",
+    template: template,
+    controller: "experienceBarController",
+  };
+});
