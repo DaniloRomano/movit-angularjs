@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="movit">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -12,15 +12,7 @@
       rel="stylesheet"
     />    
     <link href="styles/main.css" rel="stylesheet" type="text/css" />
-    <script src="vendor/requirejs/require.js"></script>
-    <script src="vendor/angular/angular.js" ></script>
-    <script src="vendor/angular-resource/angular-resource.js"></script>
-    <script src="vendor/angular-route/angular-route.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/routes/routes.js"></script>
-    <script src="js/home/controller/controller.js"></script>
-    <script src="js/home/components/profile.js"></script>
-    <script src="js/home/components/experience-bar.js"></script>
+    <script data-main="js/boot" src="vendor/requirejs/require.js"></script>    
   </head>
   <body>
     <div ng-view>

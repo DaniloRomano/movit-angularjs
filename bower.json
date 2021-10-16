@@ -19,6 +19,8 @@
     "angular-route": "^1.8.2",
     "angular-resource": "^1.8.2",
     "jquery": "^3.6.0",
-    "requirejs": "^2.3.6"
+    "requirejs": "^2.3.6",
+    "lodash": "^4.17.21",
+    "text": "requirejs/text#^2.0.16"
   }
 }
