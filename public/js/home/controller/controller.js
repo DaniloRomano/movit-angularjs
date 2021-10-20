@@ -1,3 +1,5 @@
-angular.module('movit').controller('homeController',['$scope',function($scope){
-
-}]);
+define([], function () {
+  return ["$scope", function ($scope) {
+    
+  }];
+});
