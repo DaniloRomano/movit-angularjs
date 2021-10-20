@@ -15,6 +15,7 @@ define([
   profileController,
   experienceBar
 ) {
+  
   var app = angular.module("movit", ["ngRoute"]).config([
     "$routeProvider",
     function ($routeProvider) {
@@ -24,12 +25,11 @@ define([
       });
     },
   ]);
-  angular.bootstrap(document, ["movit"]);
 
   app.controller("homeController", homeController);
-   app.controller("profileController", profileController);
-//   app.controller("experienceBarController", ["$scope", function ($scope) {}]);
-
+  app.controller("profileController", profileController);    
   app.directive("myProfile", profile);
-//   app.directive("experienceBar", experienceBar);
+  app.directive("experienceBar",experienceBar);
+
+  angular.bootstrap(document, ["movit"]);
 });

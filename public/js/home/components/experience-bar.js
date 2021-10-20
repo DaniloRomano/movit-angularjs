@@ -11,9 +11,11 @@
 define([
   "text!home/components/templates/experience-bar-template.html",
 ], function (template) {
-  return {
-    restrict: "E",
-    template: template,
-    controller: "experienceBarController",
-  };
+  return function(){
+    return {
+      restrict: "E",
+      template: template,
+      // controller: "experienceBarController",
+    };
+  } 
 });
