@@ -3,7 +3,7 @@
 
 [![Deploy](https://github.com/DaniloRomano/movit-angularjs/actions/workflows/workflow.yml/badge.svg?event=workflow_dispatch)](https://github.com/DaniloRomano/movit-angularjs/actions/workflows/workflow.yml)
 
-> Rescrito o projeto realizado na NLW 4 de React para AngularJS.
+> Reescrito o projeto realizado na NLW 4 de React para AngularJS.
 > - Configurado também Workflow de CD/CI com Github Actions
 > - Deploy automatizado no Vercel,
 > - Disponível para acesso em: https://movit-angularjs.vercel.app/#!/
