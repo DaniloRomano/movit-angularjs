@@ -9,7 +9,7 @@
 //     };
 //   });
 define([
-  "text!home/components/templates/experience-bar-template.html",
+  "text!templates/experience-bar-template.html",
 ], function (template) {
   return function(){
     return {

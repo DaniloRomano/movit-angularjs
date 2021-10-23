@@ -1,5 +1,15 @@
 module.exports = function (grunt) {
   grunt.initConfig({
+    less:{
+      development:{
+        options:{
+          paths:["assets/css"]
+        },
+        files:{
+          "public/styles/main.css":"less/**/*.less"
+        }
+      }
+    },
     copy: {
       //faz a copia para a pasta dist
       project: {
@@ -34,7 +44,8 @@ module.exports = function (grunt) {
   });
 
   grunt.registerTask("default", ["dist", "minifica"]); //tarefa para ser executada sem parametros
-  grunt.registerTask("dist", ["clean", "copy"]);
+  grunt.registerTask("dist", ["clean", "copy"]);  
+  grunt.registerTask("style",["less"]);
   grunt.registerTask("minifica", [
     "useminPrepare",
     "ngAnnotate",
@@ -50,4 +61,5 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks("grunt-contrib-cssmin");
   grunt.loadNpmTasks("grunt-usemin");
   grunt.loadNpmTasks("grunt-ng-annotate");
+  grunt.loadNpmTasks('grunt-contrib-less');
 };
