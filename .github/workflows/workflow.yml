@@ -51,6 +51,7 @@ jobs:
         run: |
           npm install -g karma
           npm install -g jasmine
+          npm install -g requirejs
           npm install -g bower
           bower install
           npm install          
