@@ -10,12 +10,12 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://www.npmjs.com/search?q=keywords:karma-adapter
-    frameworks: ['jasmine'],
+    frameworks: ['jasmine','requirejs'],
 
 
     // list of files / patterns to load in the browser
     files: [
-      // 'test-main.js',      
+      'test-main.js',      
       { pattern: '../../test/**/*-spec.js', included: true }
     ],
 

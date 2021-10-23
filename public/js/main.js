@@ -1,46 +1,32 @@
 define([
-  "angular",
-  "angular-route",
-  "text!view.html",
-  "controller/controller",
-  "directives/profile",
-  "controller/profile-controller",
+  "angular",  
+  "angular-ui-router",
+  "text!view.html",  
+  "directives/profile",  
   "directives/experience-bar",
-  "directives/countdown",
-  "controller/countdown-controller",
-  "directives/completed-challenges",
-  "controller/completed-challenges-controller",
+  "directives/countdown",  
+  "directives/completed-challenges",  
   "directives/challenge-box",
-  "directives/level-up-modal"
+  "directives/level-up-modal",
+  "routes/home-router",
 ], function (
-  angular,
-  ngRoute,
-  template,
-  homeController,
-  profile,
-  profileController,
+  angular,  
+  angularUiRoute,
+  template,  
+  profile,  
   experienceBar,
-  countdown,
-  countdownController,
-  completedChallenges,
-  completedChallengesController,
+  countdown,  
+  completedChallenges,  
   challengeBox,
-  levelUpModal
+  levelUpModal,
+  homeState
 ) {
-  var app = angular.module("movit", ["ngRoute"]).config([
-    "$routeProvider",
-    function ($routeProvider) {
-      $routeProvider.when("/", {
-        template: template,
-        controller: homeController,
-      });
+  var app = angular.module("movit", ["ui.router"]).config([
+    "$stateProvider",
+    function ($stateProvider) {
+      $stateProvider.state(homeState);
     },
   ]);
-
-  app.controller("homeController", homeController);
-  app.controller("profileController", profileController);
-  app.controller("countdownController",countdownController);
-  app.controller("completedChallengesController",completedChallengesController);
 
   app.directive("myProfile", profile);
   app.directive("experienceBar", experienceBar);

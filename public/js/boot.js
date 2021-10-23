@@ -6,18 +6,22 @@
     paths: {
       angular: "../vendor/angular/angular",
       "angular-route": "../vendor/angular-route/angular-route",
-      "text":'../vendor/text/text'
+      text: "../vendor/text/text",
+      "angular-ui-router": "../vendor/angular-ui-router/release/angular-ui-router",
     },
     shim: {
       angular: {
-        exports: "angular",
+        exports: "angular"
       },
       "angular-route": {
-        deps: ["angular"],
+        deps: ["angular"]
+      },
+      "angular-ui-router": {
+        deps: ["angular"]
       },
       text: {
-          exports: 'text!'
-      }
+        exports: "text!"
+      },
     },
   });
 

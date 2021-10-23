@@ -18,14 +18,14 @@
     ng-if="isActive"
     type="button"
     class="countdownButton countdownButtonActive"
-    ngClick="resetCountdown"
+    ng-Click="resetCountdown()"
   >
     Abandonar ciclo
   </button>
   <button
     type="button"
     class="countdownButton"
-    ngClick="startCountdown"
+    ng-Click="startCountdown()"
     ng-if="!isActive"
   >
     Iniciar um ciclo
