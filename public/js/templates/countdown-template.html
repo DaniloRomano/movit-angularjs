@@ -1,0 +1,33 @@
+<div>
+  <div class="countdownContainer">
+    <div>
+      <span>{{minuteLeft}}</span>
+      <span>{{minuteRight}}</span>
+    </div>
+    <span>:</span>
+    <div>
+      <span>{{secondLeft}}</span>
+      <span>{{secondRight}}</span>
+    </div>
+  </div>
+  <button disabled class="countdownButton" ng-if="hasFinished">
+    Ciclo encerrado
+    <img src="icons/level.svg" alt="encerrou" />
+  </button>
+  <button
+    ng-if="isActive"
+    type="button"
+    class="countdownButton countdownButtonActive"
+    ngClick="resetCountdown"
+  >
+    Abandonar ciclo
+  </button>
+  <button
+    type="button"
+    class="countdownButton"
+    ngClick="startCountdown"
+    ng-if="!isActive"
+  >
+    Iniciar um ciclo
+  </button>
+</div>

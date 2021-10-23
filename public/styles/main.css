@@ -1,96 +1,335 @@
-:root {
-    --white: #fff;
-    --background: #F2F3F5;
-    --gray-line: #dcdde0;
-    --text: #666666;
-    --text-highlight: #b3b9ff;
-    --title: #2e384d;
-    --red: #e83f5b;
-    --green: #4cd62b;
-    --blue: #5965e0;
-    --blue-dark: #4953b8;
-    --blue-twitter: #2aa9e0;
+.challengeBoxContainer {
+  height: 100%;
+  background: var(--white);
+  border-radius: 5px;
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.challengeNotActive {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.challengeNotActive strong {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+.challengeNotActive p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.4;
+  max-width: 70%;
+  margin-top: 3rem;
+}
+.challengeNotActive img {
+  margin-bottom: 1rem;
+}
+.challengeActive {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.challengeActive header {
+  color: var(--blue);
+  font-weight: 600;
+  font-size: 1.25rem;
+  padding: 0 2rem 1.5rem;
+  border-bottom: 1px solid var(--gray-line);
+}
+.challengeActive main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.challengeActive main strong {
+  font-weight: 600;
+  font-size: 2rem;
+  color: var(--title);
+  margin: 1.5rem 0 1rem;
+}
+.challengeActive main p {
+  line-height: 1.5;
+}
+.challengeActive footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.challengeActive footer button {
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 5px;
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: 600;
+  transition: filter 0.2s;
+}
+.challengeActive footer button.challengeFailButton {
+  background: var(--red);
+}
+.challengeActive footer button.challengeSucceededButton {
+  background: var(--green);
+}
+.challengeActive footer button:hover {
+  filter: brightness(0.9);
 }
 
-html {
-  font-size: 62.5%;
+.completedChallenesContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 3.5rem 0;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #d7d8da;
+  font-weight: 500;
+}
+.completedChallenesContainer span:first-child {
+  font-size: 1.25rem;
+}
+.completedChallenesContainer span:last-child {
+  font-size: 1.5rem;
 }
 
-body {
+.countdownContainer {
+  display: flex;
+  align-items: center;
+  font-family: Rajdhani;
+  font-weight: 600;
+  color: var(--title);
+}
+.countdownContainer > div {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background: var(--white);
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+  font-size: 8.5rem;
+  text-align: center;
+}
+.countdownContainer > div span {
+  flex: 1;
+}
+.countdownContainer > div span:first-child {
+  border-right: 1px solid #f8f0f3;
+}
+.countdownContainer > div span:last-child {
+  border-left: 1px solid #f8f0f3;
+}
+.countdownContainer > span {
+  font-size: 6.5rem;
+  margin: 0 0.5rem;
+}
+.countdownButton {
+  width: 100%;
+  height: 5rem;
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 5px;
+  background: var(--blue);
+  color: var(--white);
+  font-size: 1.5rem;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+.countdownButton:not(:disabled):hover {
+  background: var(--blue-dark);
+}
+.countdownButtonActive {
+  background: var(--white);
+  color: var(--title);
+}
+.countdownButtonActive:not(:disabled):hover {
+  background: var(--red);
+  color: var(--white);
+}
+.countdownButton:disabled {
+  background: var(--white);
+  color: var(--text);
+  cursor: not-allowed;
+  border-bottom: 4px solid #4CD62B;
+}
+.countdownButton:disabled img {
+  margin-left: 0.5rem;
+}
+
+.homeContainer {
+  height: 100vh;
+  width: 100rem;
+  margin: auto;
+  padding: 2.5rem 2.5rem;
+  flex-direction: column;
+}
+.experienceBar {
+  display: flex;
+  align-items: center;
+}
+.experienceBar span {
+  font-size: 1rem;
+}
+.experienceBar > div {
+  flex: 1;
+  height: 4px;
+  border-radius: 4px;
+  background: var(--gray-line);
+  margin: 3rem 1.5rem 5rem 1.5rem;
+  position: relative;
+}
+.experienceBar > div > div {
+  height: 4px;
+  border-radius: 4px;
+  background: var(--green);
+}
+span.currentExperience {
+  position: absolute;
+  top: 1.2rem;
+  transform: translatex(-50%);
+}
+
+.overlay {
+  background: rgba(242, 243, 245, 0.8);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  background: var(--white);
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem 3rem;
+  border-radius: 5px;
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  position: relative;
+}
+.container header {
+  font-size: 8.75rem;
+  font-weight: 600;
+  color: var(--blue);
+  background: url('/icons/levelup.svg') no-repeat center;
+  background-size: contain;
+}
+.container strong {
+  font-size: 2.25rem;
+  color: var(--title);
+}
+.container p {
+  font-size: 1.25rem;
+  color: var(--text);
+  margin-top: 0.25rem;
+}
+.container button {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  background: transparent;
+  border: 0;
+  font-size: 0;
+}
+
+* {
   margin: 0;
   padding: 0;
-  background-color: var(--background);
-  font-family: 'Roboto';
+  box-sizing: border-box;
 }
-
-body, input, textarea, button {
-    font: 400 1rem "Inter", sans-serif;
+:root {
+  --white: #fff;
+  --background: #f2f3f5;
+  --gray-line: #dcdde0;
+  --text: #666666;
+  --text-highlight: #b3b9ff;
+  --title: #2e384d;
+  --red: #e83f5b;
+  --green: #4cd62b;
+  --blue: #5965e0;
+  --blue-dark: #4953b8;
+  --blue-twitter: #2aa9e0;
 }
-
-.homeContainer{
-    height: 100vh;
-    width: 100rem;
-    margin: auto;
-    padding: 2.5rem 2.5rem;
-    flex-direction: column;
+@media (max-width: 1080px) {
+  html {
+    font-size: 93.75%;
+  }
 }
-
-.experienceBar {
-    display: flex;
-    align-items: center;
+@media (max-width: 720px) {
+  html {
+    font-size: 87.5%;
+  }
 }
-
-.experienceBar span {
-    font-size: 1rem;
+body {
+  background: var(--background);
+  color: var(--text);
 }
-
-.experienceBar>div {
-    flex: 1;
-    height: 4px;
-    border-radius: 4px;
-    background: var(--gray-line);
-    margin: 3rem 1.5rem 5rem 1.5rem;
-    position: relative;
+body,
+input,
+textarea,
+button {
+  font: 400 1rem "Inter", sans-serif;
 }
-
-.experienceBar>div>div {
-    height: 4px;
-    border-radius: 4px;
-    background: var(--green);
+button {
+  cursor: pointer;
 }
-
-span.currentExperience {
-    position: absolute;
-    top: 1.2rem;
-    transform: translatex(-50%);
+a {
+  color: inherit;
+  text-decoration: none;
+}
+.homeContainer {
+  height: 70vh;
+  max-width: 992px;
+  margin: 0 auto;
+  padding: 0rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+.homeContainer section {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6.25rem;
+  align-content: center;
 }
 
 .profileContainer {
   display: flex;
   align-items: center;
 }
-
 .profileContainer > img {
   width: 5.5rem;
   height: 5.5rem;
   border-radius: 50%;
 }
-
 .profileContainer div {
   margin-left: 1.5rem;
 }
-
 .profileContainer div strong {
   font-size: 1.5rem;
   font-weight: 600;
   color: var(--title);
 }
-
 .profileContainer div p {
   font-size: 1rem;
   margin-top: 0.5rem;
 }
-
 .profileContainer div p img {
   margin-right: 0.5rem;
 }
