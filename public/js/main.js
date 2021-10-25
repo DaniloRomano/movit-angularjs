@@ -1,25 +1,23 @@
 define([
   "angular",  
-  "angular-ui-router",
-  "text!view.html",  
-  "directives/profile",  
-  "directives/experience-bar",
-  "directives/countdown",  
-  "directives/completed-challenges",  
-  "directives/challenge-box",
-  "directives/level-up-modal",
-  "routes/home-router",
+  "angular-ui-router",   
+  "pages/home/home-router",
+  "directives/profile/profile-directive",  
+  "directives/experience-bar/experience-bar",
+  "directives/countdown/countdown",  
+  "directives/completed-challenges/completed-challenges",  
+  "directives/challenge-box/challenge-box",
+  "directives/level-up-modal/level-up-modal",  
 ], function (
   angular,  
-  angularUiRoute,
-  template,  
+  angularUiRoute,  
+  homeState,
   profile,  
   experienceBar,
   countdown,  
   completedChallenges,  
   challengeBox,
-  levelUpModal,
-  homeState
+  levelUpModal  
 ) {
   var app = angular.module("movit", ["ui.router"]).config([
     "$stateProvider",

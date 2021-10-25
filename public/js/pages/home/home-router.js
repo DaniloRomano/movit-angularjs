@@ -1,5 +1,5 @@
-define(["text!view.html",
-"controller/controller"], function (template,controller) {
+define(["text!pages/home/view.html",
+"pages/home/controller"], function (template,controller) {
   return {
     name: "home",
     url: "/",

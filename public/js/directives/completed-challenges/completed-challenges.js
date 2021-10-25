@@ -1,6 +1,6 @@
 define([
-  "text!templates/completed-challenges-template.html",
-  "controller/completed-challenges-controller"
+  "text!directives/completed-challenges/completed-challenges-template.html",
+  "directives/completed-challenges/completed-challenges-controller"
 ], function (template,controller) {
   return function () {
     return {
