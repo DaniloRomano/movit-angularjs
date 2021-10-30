@@ -4,7 +4,7 @@
   "description": "Movit in angularJS",
   "main": "index.js",
   "scripts": {
-    "serve": "node auth/app",
+    "serve": "node app/index.js",
     "test": "karma start config/karma/karma.conf.js"
   },
   "repository": {
