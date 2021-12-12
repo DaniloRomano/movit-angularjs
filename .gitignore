@@ -116,3 +116,5 @@ dist/
 
 # vendor
 public/vendor/
+
+docker-compose.yml
