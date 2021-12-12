@@ -31,7 +31,7 @@ passport.use(
     {
       clientID: process.env.GITHUB_CLIENT_ID,
       clientSecret: process.env.GITHUB_CLIENT_SECRET,
-      callbackURL: "https://movit-angularjs.vercel.app/auth/github/callback",
+      callbackURL: "http://localhost:3000/auth/github/callback",
     },
     function (accessToken, refreshToken, profile, done) {
       userInfo.nome = profile.displayName;
@@ -74,7 +74,7 @@ app.get(
 
 app.route('/logado')
   .get(function(req,res){
-    res.redirect("/#/?nome="+req.user.nome+"&username="+req.user.username);
+    res.redirect("http://localhost/#/?nome="+req.user.nome+"&username="+req.user.username);
   });
 
 app.get("/logout", function (req, res) {
