@@ -4,7 +4,7 @@
   "description": "Movit in angularJS",
   "main": "index.js",
   "scripts": {
-    "build": "npm install -g bower | bower install",
+    "build": "./scripts/start.sh",
     "start": "node app/index.js",
     "serve": "node app/index.js",
     "test": "karma start config/karma/karma.conf.js"
