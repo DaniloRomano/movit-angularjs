@@ -1,0 +1,19 @@
+services:
+  app:
+    image: node
+    volumes:
+      - ./public:/home/node
+      - ./node_modules:/home/node/node_modules
+    working_dir: /home/node
+    command: node app/index
+    environment:
+      - GITHUB_CLIENT_ID=${GITHUB_CLIENT_ID}
+      - GITHUB_CLIENT_SECRET=${GITHUB_CLIENT_SECRET}
+    ports:
+      - 3000:3000
+  front:
+    image: nginx
+    volumes:
+      - ./public:/usr/share/nginx/html
+    ports:
+      - 80:80
